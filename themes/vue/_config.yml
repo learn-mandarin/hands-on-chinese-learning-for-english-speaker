@@ -1,0 +1,23 @@
+site_description: "RPA - The Progressive JavaScript Framework"
+google_analytics: UA-46852172-1
+root_domain: vuejs.org
+vue_version: 2.5.16
+
+special_sponsors:
+  - img: 
+
+
+platinum_sponsors:
+  - url: http://tooltwist.com/
+    img: tooltwist.png
+
+
+gold_sponsors:
+  - url: https://laravel.com
+    img: laravel.png
+
+
+bronze_sponsors:
+  - url: http://tighten.co/
+    img: http://i.imgur.com/T7fQYLT.png
+

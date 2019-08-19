@@ -1,0 +1,144 @@
+<div class="sidebar">
+  <div class="sidebar-inner-index">
+    <ul class="main-menu">
+      <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+    </ul>
+  </div>
+</div>
+
+<div id="hero">
+  <div class="inner">
+    <div class="left">
+      <img class="hero-logo" src="<%- url_for("/images/xuezhongwen.jpg") %>">
+    </div><div class="right">
+      <h2 class="vue">学中文</h2>
+      <h1>
+        学好普通话,走遍中国都不怕~ <br> 
+        
+      </h1>
+      <p>
+        <a id="modal-player" class="button has-icon" href="javascript:;">
+          <%- partial('icons/play') %>
+          WHY Mandarin?</a>
+        <a class="button white" href="<%- url_for("/v2/guide/") %>">入门</a>
+        <a class="button gray has-icon" href="https://github.com/rpa-cn/rpa" target="_blank">
+          <%- partial('icons/github-dark') %>
+          GITHUB</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 暂无
+<div id="special-sponsor">
+  <h3>Special Sponsors</h3>
+  <br>
+  <a href="https://stdlib.com/" target="_blank">
+    <img src="/images/stdlib.png" style="width:140px">
+    <span>Function as a Service Platform and Library</span>
+  </a>
+  <br>
+  <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank">
+    <img src="/images/bit.png" style="width:60px;height:60px">
+    <span>The fastest way to share code</span>
+  </a>
+</div>
+-->
+
+
+<div id="highlights">
+  <div class="inner">
+    <div class="point">
+      <h2>中国发展很快</h2>
+      <p>可以来投资、做生意</br>
+      找工作。</br>
+    打开命运的大门 西方精英家庭教育必备</p>
+    </div>
+
+    <div class="point">
+      <h2>中国文化历史悠久</h2>
+      <p>56个民族 找朋友 </br>
+      上下五千年的历史</br>
+      </p>
+    </div>
+
+    <div class="point">
+      <h2>大山大河</h2>
+      <p>
+        旅游</br>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<div id="sponsors">
+  <div class="inner">
+    <%- partial('partials/sponsors') %>
+  </div>
+</div>
+
+
+
+<div id="footer">
+  <p>
+    <a class="social-icon" href="https://github.com/orgs/rpa-cn/dashboard" target="_blank">
+      <%- partial('icons/github') %>
+    </a>
+    <a class="social-icon" href="https://weibo.com/p/2304914240715636861725" target="_blank">
+      <%- partial('icons/weibo') %>
+    </a>
+    <a class="social-icon" href="https://www.zhihu.com/search?type=content&q=rpa" target="_blank">
+      <%- partial('icons/zhihu') %>
+    </a>
+  </p>
+  <p>Released under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a><br>
+  Copyright &copy; 2014-<%- new Date().getFullYear() %> Wanghaisheng</p>
+</div>
+            <%- partial('partials/ad') %>
+
+
+
+            <div id="video-modal" class="modal">
+                <div class="video-space" style="padding: 56.25% 0 0 0; position: relative;"></div>
+              </div>
+
+<script>
+(function () {
+  var topScrolled = false
+  var sponsors = document.getElementById('sponsors')
+  var sponsorTop = sponsors.offsetTop
+  var sponsorActive = false
+
+  window.addEventListener('resize', function () {
+    sponsorTop = sponsors.offsetTop
+  })
+
+  window.addEventListener('scroll', function () {
+    if (window.pageYOffset > 165 && !topScrolled) {
+      topScrolled = true
+      document.getElementById('mobile-bar').classList.remove('top')
+    } else if (window.pageYOffset <= 165 && topScrolled) {
+      topScrolled = false
+      document.getElementById('mobile-bar').classList.add('top')
+    }
+    if (window.pageYOffset > sponsorTop - 100) {
+      if (!sponsorActive) {
+        sponsorActive = true
+        sponsors.classList.add('active')
+      }
+    } else {
+      if (sponsorActive) {
+        sponsorActive = false
+        sponsors.classList.remove('active')
+      }
+    }
+  })
+})()
+</script>
+
+
+
+
